@@ -1,4 +1,5 @@
 from tkinter import *
+# Tkinter is the standard GUI library for Python. Python when combined with Tkinter provides a fast and easy way to create GUI applications. Tkinter provides a powerful object-oriented interface to the Tk GUI toolkit.
 
 def callback(r,c):
   global person
@@ -39,7 +40,6 @@ def check():
       b[0][2].config(bg='grey')
       stop=True
 
-
 root= Tk()
 root.title("Tic Tac Toe")
 
@@ -49,7 +49,6 @@ b=[[0,0,0],
 states=[[0,0,0],
    [0,0,0],
    [0,0,0]]
-
 
 for i in range(3):
   for j in range (3):
