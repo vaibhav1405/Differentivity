@@ -19,7 +19,7 @@ int gcd(int a, int h)
 	}
 }
 
-// Code to demonstrate RSA algorithm
+
 int main()
 {
 	// Two random prime numbers
