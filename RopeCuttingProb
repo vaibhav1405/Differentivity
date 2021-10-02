@@ -1,0 +1,17 @@
+public class RopeCuttingRecursion {
+
+	public static int Piecesmax(int n,int a, int b,int c) {
+		if(n==0) return 0;
+		if(n<=1) return -1;
+		int res = Math.max(Piecesmax(n-a, a, b, c), 
+		          Math.max(Piecesmax(n-b, a, b, c), 
+		        		  Piecesmax(n-c, a, b, c)));
+		if(res == -1)
+			return -1;
+		return res+1;
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(Piecesmax(5,4,2,6));
+	}
+}
