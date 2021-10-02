@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap" rel="stylesheet">
+    <style>
+        body{
+            font-family: 'Inconsolata', monospace;
+        }
+        .btn{
+            padding: auto;
+            margin: 5px 5px;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+        
+        .cal-body{
+            border: 2px solid lightblue;
+            background-color: goldenrod;
+            border-radius: 5px;
+        }
+        .screen{
+            margin: 20px;
+            border-radius: 5px;
+            padding: 10px;
+            width: fit-content;
+            color: black;
+        }
+        .whole-body{
+            background-color: lavender;
+            
+        
+        }
+        @media only screen and (min-width: 245px) {
+          /* For mobile phones: */
+          [class*="col-"] {
+            display: flex;
+          }
+        }
+    </style>
+    <title>Calculator</title>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-primary">
+        <a class="navbar-brand" href="#">Calculator</a>
+    </nav>
+    <div class="container mt-3">
+        <div class="row">
+            <div class="m-auto text-center">
+                <div class="whole-body">
+                    <div class="screen">
+                        <h2 id="result">0</h2>
+                    </div>
+                    <div class="cal-body m-auto text-center">
+                        <button class="btn btn-primary" onclick="pushBtn(this)">AC</button><br>
+                        <button class="btn btn-primary" onclick="pushBtn(this)">7</button>
+                        <button class="btn btn-primary" onclick="pushBtn(this)">8</button>
+                        <button class="btn btn-primary" onclick="pushBtn(this)">9</button>
+                        <button class="btn btn-primary" onclick="pushBtn(this)">/</button><br>
+                        <button class="btn btn-primary" onclick="pushBtn(this)">4</button>
+                        <button class="btn btn-primary" onclick="pushBtn(this)">5</button>
+                        <button class="btn btn-primary" onclick="pushBtn(this)">6</button>
+                        <button class="btn btn-primary" onclick="pushBtn(this)">*</button><br>
+                        <button class="btn btn-primary" onclick="pushBtn(this)">1</button>
+                        <button class="btn btn-primary" onclick="pushBtn(this)">2</button>
+                        <button class="btn btn-primary" onclick="pushBtn(this)">3</button>
+                        <button class="btn btn-primary" onclick="pushBtn(this)">-</button><br>
+                        <button class="btn btn-primary" onclick="pushBtn(this)">0</button>
+                        <button class="btn btn-primary" onclick="pushBtn(this)">.</button>
+                        <button class="btn btn-primary" onclick="pushBtn(this)">+</button>
+                        <button class="btn btn-primary" onclick="pushBtn(this)">=</button><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+    <script>
+        var result = document.getElementById('result');
+
+        function pushBtn(object)
+            {
+                var pushed = object.innerHTML;
+                if (pushed=='=')
+                {
+                    try{
+                        result.innerHTML = eval(result.innerHTML);
+                    }
+                    catch(err){
+                        result.innerHTML = 'Error';
+                    }
+                }
+                else if (pushed=='AC'){
+                    result.innerHTML='0';
+                }
+                else{
+                    if(result.innerHTML=='0')
+                    {
+                        result.innerHTML = pushed;
+                    }
+                    else{
+                        result.innerHTML+=pushed;
+                    }
+                }
+            }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+</html>
